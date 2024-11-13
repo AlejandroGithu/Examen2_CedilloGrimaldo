@@ -9,16 +9,19 @@ function addTask() {
         card.classList.add("card");
 
         const priority = prioritySelect.value;
-        if (priority === "alta") {
-            card.style.backgroundColor = "red";
-        } else if (priority === "media") {
-            card.style.backgroundColor = "yellow";
-        } else if (priority === "baja") {
-            card.style.backgroundColor = "green";
-        }
-
         const text = document.createElement("p");
         text.textContent = taskInput.value;
+
+        if (priority === "alta") {
+            card.style.backgroundColor = "red";
+            text.style.color = "white"; 
+        } else if (priority === "media") {
+            card.style.backgroundColor = "yellow";
+            text.style.color = "black"; 
+        } else if (priority === "baja") {
+            card.style.backgroundColor = "green";
+            text.style.color = "white"; 
+        }
 
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Eliminar";
